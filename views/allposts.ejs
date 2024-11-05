@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous">
+    </head>
+    <body class="p-3 m-3 bg-dark text-white">
+        <nav class="nav justify-content-end">
+            <a class="nav-link active" aria-current="page"
+                href="/profile">Profile</a>
+            <a class="nav-link active" aria-current="page"
+                href="/logout">Logout</a>
+        </nav>
+        <h1 class="text-center mt-3"
+            style="font-family: cursive">
+            Soci~ero </h1>
+
+        <div class="conatiner mt-4">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <% if(posts.length > 0) { %>
+                    <% posts.reverse().forEach(function(post) { %>
+                    <div class="card mt-3 mb-3">
+                        <div class="card-body">
+                            <img
+                                src="/images/uploads/<%= post.user.profilepic %>"
+                                alt="User Profile Pic"
+                                class="me-2"
+                                style="width: 40px; height: 40px; border-radius: 50%; display: inline;object-fit: cover">
+                            <h6 class="card-title" style="display: inline">@<%=
+                                post.user.username
+                                %></h6>
+                            <p class="card-text mt-3"><%= post.content %></p>
+                            <small class="ms-2" style="margin-bottom: 0px"><%=
+                                post.likes.length %></small>
+                            <a href="/like/<%=post._id%>"
+                                class="card-link"
+                                style="margin-top: 0px; text-decoration: none;">
+                                <%=post.likes.indexOf(userid)===-1?"🤍":"❤️"%>
+                            </a>
+                        </div>
+                    </div>
+                    <% }) } else { %>
+                    <h5>No posts yet</h5>
+                    <% } %>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
