@@ -34,10 +34,10 @@ Sociero is designed to provide users with a seamless social networking experienc
 
 ## **📸 Screenshots**
 ### **Login Page**
-![Login Page](./public/images/login-page.png)
+![Login Page](./public/images/Login-page.png)
 
-### **Home Page (Posts)**
-![Home Page](./public/images/home-page.png)
+### **Profile Page **
+![Home Page](./public/images/Profile-page.png)
 
 ---
 
